@@ -1,0 +1,42 @@
+.face-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
+    color: var(--primary-color);
+    height: 10vh;
+    font-family: "Poppins", sans-serif;
+    padding: 0 22px 0 22px;
+}
+
+form {
+    float: right;
+}
+
+input[type="text"] {
+    border: solid 1px var(--primary-color);
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 4px;
+    display: inline-block;
+}
+
+button {
+    padding: 10px;
+    border: solid 1px var(--primary-color);
+    background: var(--primary-color);
+    color: rgb(0, 0, 0);
+    border-radius: 8px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.page-characters-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+    margin: 10px;
+}

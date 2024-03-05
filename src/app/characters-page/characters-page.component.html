@@ -1,4 +1,11 @@
-<section>
+<section class="face-page">
+    <h1>Characters</h1>
+    <form>
+        <input type="text" placeholder="filter character" #filter>
+        <button class="primary" type="button">Search</button>
+    </form>
+</section>
+<section class="page-characters-wrapper ">
     <app-character-card *ngFor="let character of dataCharacterPage.results"
         [character]="character"></app-character-card>
 </section>
