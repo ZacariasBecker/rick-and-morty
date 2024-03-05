@@ -1,3 +1,1 @@
-export interface SelectorType {
-    selector: 'character' | 'episode' | 'location';
-}
+export type SelectorType = 'character' | 'episode' | 'location';

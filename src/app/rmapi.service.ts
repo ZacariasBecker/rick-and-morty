@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
-import { CharacterType } from './charactertype';
 import { SelectorType } from './selectortype';
+import { DataInterface } from './data-interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RcapiService {
+export class RMapiService {
 
   url = "https://rickandmortyapi.com/api";
 
-  async getData(selector: SelectorType, page: number): Promise<CharacterType[]> {
+  async getADataByID(selector: SelectorType, page: number): Promise<DataInterface> {
     const data = await fetch(`${this.url}/${selector}/?page=${page}`);
-    return await data.json() ?? [];
+    return await data.json();
   };
 
   constructor() { }
-
 }

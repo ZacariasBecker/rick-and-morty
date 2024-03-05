@@ -1,1 +1,4 @@
-<p>characters-page works!</p>
+<section>
+    <app-character-card *ngFor="let character of dataCharacterPage.results"
+        [character]="character"></app-character-card>
+</section>

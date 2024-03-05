@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RcapiService } from './rcapi.service';
+import { RMapiService } from './rmapi.service';
 
-describe('RcapiService', () => {
-  let service: RcapiService;
+describe('RMapiService', () => {
+  let service: RMapiService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(RcapiService);
+    service = TestBed.inject(RMapiService);
   });
 
   it('should be created', () => {
