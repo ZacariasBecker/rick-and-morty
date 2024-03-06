@@ -2,7 +2,8 @@
     <img [src]="character.image" [alt]="character.name" style="width:100%">
     <h3>{{character.name}}</h3>
     <span class="status">
-        <span class="status-icon"></span>
+        <span class="status-icon"
+            [ngClass]="character.status === 'Alive' ? 'status-alive':(character.status==='Dead'?'status-dead':'status-unknown')"></span>
         <p class="title">{{character.status}}, {{character.species}}</p>
     </span>
     <p><button>see more...</button></p>

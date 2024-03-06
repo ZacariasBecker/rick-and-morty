@@ -1,5 +1,5 @@
 .card {
-    box-shadow: 0 4px 8px 0 #a9d3e96c;
+    box-shadow: 0 4px 8px 0 #a9d3e950;
     max-width: 300px;
     margin: auto;
     text-align: center;
@@ -30,8 +30,19 @@
     height: 9px;
     width: 9px;
     border-radius: 50%;
-    background-color: red;
     margin-right: 9px;
+}
+
+.status-alive {
+    background-color: green;
+}
+
+.status-dead {
+    background-color: red;
+}
+
+.status-unknown {
+    background-color: gray;
 }
 
 img {

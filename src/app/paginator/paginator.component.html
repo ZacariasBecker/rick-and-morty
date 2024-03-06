@@ -1,0 +1,6 @@
+<nav *ngIf="paginatorControls" class="paginator-nav">
+    <ul>
+        <li><a [routerLink]="['/characters',1]">1</a></li>
+        <li><a [routerLink]="['/characters',42]">{{paginatorControls.pages}}</a></li>
+    </ul>
+</nav>

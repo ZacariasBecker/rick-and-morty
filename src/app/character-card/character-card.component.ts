@@ -1,10 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { CharacterInterface } from '../character-interface';
 
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-character-card',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './character-card.component.html',
   styleUrl: './character-card.component.css'
 })
