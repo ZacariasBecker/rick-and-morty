@@ -30,8 +30,9 @@ export class PaginatorComponent {
   setPreviousPagesValues = () => {
     let newPageValues: number[] = [];
     for (let i = 0; i < this.numberOfPages; i++) {
-      console.log(this.pageValues[0] - i - 1);
-      newPageValues.unshift(this.pageValues[0] - i - 1);
+      if ((this.pageValues[0] - i - 1) > 0) {
+        newPageValues.unshift(this.pageValues[0] - i - 1);
+      }
     }
     this.pageValues = newPageValues;
     this.navigateToPage(this.pageValues[this.numberOfPages - 1]);
