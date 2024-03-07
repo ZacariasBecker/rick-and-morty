@@ -1,6 +1,13 @@
-<nav *ngIf="paginatorControls" class="paginator-nav">
+<nav *ngIf="paginatorInfo" class="paginator-nav">
     <ul>
-        <li><a [routerLink]="['/characters',1]">1</a></li>
-        <li><a [routerLink]="['/characters',42]">{{paginatorControls.pages}}</a></li>
+        <li>
+            <a (click)="setPreviousPagesValues()">previous</a>
+        </li>
+        <li *ngFor="let page of this.pageValues" [ngClass]="page===this.currentPage ? 'active':''">
+            <a (click)="navigateToPage(page)">{{page}}</a>
+        </li>
+        <li>
+            <a (click)=" setNextPagesValues()">next</a>
+        </li>
     </ul>
 </nav>

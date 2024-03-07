@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
+import { InfoInterface } from '../info-interface';
 
 
 @Component({
@@ -12,14 +13,39 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './paginator.component.css'
 })
 export class PaginatorComponent {
+  route: ActivatedRoute = inject(ActivatedRoute);
 
-  @Input() paginatorControls: {
-    currentPage?: string,
-    pages?: number,
-    next?: string,
-    prev?: string;
-  } = {};
+  @Input() paginatorInfo?: InfoInterface;
+  @Output() newItemEvent = new EventEmitter<number>();
+
+  pageValues: number[] = [];
+  numberOfPages: number = 10;
+  currentPage;
+
+  navigateToPage = (page: number) => {
+    this.currentPage = page;
+    this.newItemEvent.emit(page);
+  };
+
+  setPreviousPagesValues = () => {
+
+  };
+
+  setNextPagesValues = () => {
+    let newPageValues = [];
+    for (let i = 0; i < this.numberOfPages; i++) {
+      if (this.pageValues[i] + this.numberOfPages <= (this.paginatorInfo?.pages || 1)) {
+        newPageValues.push(this.pageValues[i] + this.numberOfPages);
+      }
+    }
+    this.pageValues = newPageValues;
+    this.navigateToPage(this.pageValues[0]);
+  };
 
   constructor() {
+    this.currentPage = parseInt(this.route.snapshot.params['page'] || 1);
+    for (let i = this.currentPage - 1; i < this.currentPage + this.numberOfPages - 1; i++) {
+      this.pageValues.push(i + 1);
+    };
   }
 }

@@ -23,14 +23,18 @@ input[type="text"] {
 
 button {
     padding: 10px;
-    border: solid 1px var(--primary-color);
-    background: var(--primary-color);
-    color: rgb(0, 0, 0);
+    border: solid 3px var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
     border-radius: 8px;
+    transition: 90ms ease-in-out;
 }
 
 button:hover {
     cursor: pointer;
+    background-color: var(--primary-color);
+    color: black;
+    transition: 90ms ease-in-out;
 }
 
 .page-characters-wrapper {
