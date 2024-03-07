@@ -1,12 +1,12 @@
 <nav *ngIf="paginatorInfo" class="paginator-nav">
     <ul>
-        <li>
+        <li *ngIf="!pageValues.includes(1)">
             <a (click)="setPreviousPagesValues()">previous</a>
         </li>
         <li *ngFor="let page of this.pageValues" [ngClass]="page===this.currentPage ? 'active':''">
             <a (click)="navigateToPage(page)">{{page}}</a>
         </li>
-        <li>
+        <li *ngIf="!pageValues.includes(paginatorInfo.pages||-1)">
             <a (click)=" setNextPagesValues()">next</a>
         </li>
     </ul>

@@ -11,6 +11,11 @@ const routeConfig: Routes = [
         title: 'Home page'
     },
     {
+        path: 'characters',
+        component: CharactersPageComponent,
+        title: 'Characters page'
+    },
+    {
         path: 'characters/:page',
         component: CharactersPageComponent,
         title: 'Characters page'

@@ -20,7 +20,7 @@ export class PaginatorComponent {
 
   pageValues: number[] = [];
   numberOfPages: number = 10;
-  currentPage;
+  currentPage: number;
 
   navigateToPage = (page: number) => {
     this.currentPage = page;
@@ -28,11 +28,17 @@ export class PaginatorComponent {
   };
 
   setPreviousPagesValues = () => {
-
+    let newPageValues: number[] = [];
+    for (let i = 0; i < this.numberOfPages; i++) {
+      console.log(this.pageValues[0] - i - 1);
+      newPageValues.unshift(this.pageValues[0] - i - 1);
+    }
+    this.pageValues = newPageValues;
+    this.navigateToPage(this.pageValues[this.numberOfPages - 1]);
   };
 
   setNextPagesValues = () => {
-    let newPageValues = [];
+    let newPageValues: number[] = [];
     for (let i = 0; i < this.numberOfPages; i++) {
       if (this.pageValues[i] + this.numberOfPages <= (this.paginatorInfo?.pages || 1)) {
         newPageValues.push(this.pageValues[i] + this.numberOfPages);
