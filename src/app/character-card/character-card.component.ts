@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CharacterInterface } from '../character-interface';
+import { CharacterInterface } from '../results-character-interface';
 
 import { CommonModule } from '@angular/common';
 

@@ -1,4 +1,4 @@
-import { CharacterInterface } from "./character-interface";
+import { CharacterInterface } from "./results-character-interface";
 import { InfoInterface } from "./info-interface";
 
 export interface DataInterface {
