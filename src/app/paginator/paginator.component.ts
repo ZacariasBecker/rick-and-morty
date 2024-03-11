@@ -30,12 +30,14 @@ export class PaginatorComponent {
   setPreviousPagesValues = () => {
     let newPageValues: number[] = [];
     for (let i = 0; i < this.numberOfPages; i++) {
-      if ((this.pageValues[0] - i - 1) > 0) {
-        newPageValues.unshift(this.pageValues[0] - i - 1);
+      if (this.currentPage - i > 0) {
+        newPageValues.unshift(this.currentPage - i);
+      } else {
+        newPageValues.push(newPageValues[newPageValues.length - 1] + 1);
       }
     }
     this.pageValues = newPageValues;
-    this.navigateToPage(this.pageValues[this.numberOfPages - 1]);
+    this.navigateToPage(this.pageValues[0]);
   };
 
   setNextPagesValues = () => {
@@ -53,6 +55,6 @@ export class PaginatorComponent {
     this.currentPage = parseInt(this.route.snapshot.params['page'] || 1);
     for (let i = this.currentPage - 1; i < this.currentPage + this.numberOfPages - 1; i++) {
       this.pageValues.push(i + 1);
-    };
+    }
   }
 }
