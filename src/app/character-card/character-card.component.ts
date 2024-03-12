@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CharacterInterface } from '../results-character-interface';
+import { ResultsCharacterInterface } from '../results-character-interface';
 
 import { CommonModule } from '@angular/common';
 
@@ -11,5 +11,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './character-card.component.css'
 })
 export class CharacterCardComponent {
-  @Input() character!: CharacterInterface;
+  @Input() character!: ResultsCharacterInterface;
 }

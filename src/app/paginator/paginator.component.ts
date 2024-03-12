@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
+import { Component, Input, Output, EventEmitter, inject, SimpleChange } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
@@ -53,8 +53,19 @@ export class PaginatorComponent {
 
   constructor() {
     this.currentPage = parseInt(this.route.snapshot.params['page'] || 1);
-    for (let i = this.currentPage - 1; i < this.currentPage + this.numberOfPages - 1; i++) {
-      this.pageValues.push(i + 1);
+  }
+
+  ngOnChanges(change: SimpleChange) {
+    this.pageValues = [];
+    if (this.paginatorInfo?.pages) {
+      for (let i = this.currentPage - 1; i < this.currentPage + this.numberOfPages - 1; i++) {
+        if (i < this.paginatorInfo.pages) {
+          this.pageValues.push(i + 1);
+        } else {
+          this.pageValues.unshift(this.pageValues[0] - 1);
+        }
+      }
     }
   }
+
 }
