@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { RMapiService } from '../rmapi.service';
-import { DataInterface } from '../data-interface';
+import { DataCharacterInterface, DataEpisodeInterface } from '../data-interface';
 
 import { CharacterCardComponent } from '../character-card/character-card.component';
 import { PaginatorComponent } from '../paginator/paginator.component';
@@ -20,20 +20,20 @@ export class CharactersPageComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   rmapiService: RMapiService = inject(RMapiService);
 
-  dataCharacterPage: DataInterface | undefined;
+  dataCharacterPage?: DataCharacterInterface;
   characterInfo?: InfoInterface;
 
   navigateToPage = async (page: number) => {
     await this.router.navigate(['characters', page]);
     const currentCharactersPage = parseInt(this.route.snapshot.params['page'] || 1);
-    this.rmapiService.getADataByID('character', currentCharactersPage).then((dataCharacterPage: DataInterface) => {
+    this.rmapiService.getADataByID<DataCharacterInterface>('character', currentCharactersPage).then((dataCharacterPage: DataCharacterInterface) => {
       this.dataCharacterPage = dataCharacterPage;
     });
   };
 
   constructor(private router: Router) {
     const currentCharactersPage = parseInt(this.route.snapshot.params['page'] || 1);
-    this.rmapiService.getADataByID('character', currentCharactersPage).then((dataCharacterPage: DataInterface) => {
+    this.rmapiService.getADataByID<DataCharacterInterface>('character', currentCharactersPage).then((dataCharacterPage: DataCharacterInterface) => {
       this.dataCharacterPage = dataCharacterPage;
       this.characterInfo = dataCharacterPage.info;
     });

@@ -19,3 +19,22 @@ export interface ResultsCharacterInterface {
     created: string;
 }
 
+export interface ResultsEpisodeInterface {
+    id: number;
+    name: string;
+    air_date: string;
+    episode: string;
+    characters: string[];
+    url: string;
+    created: string;
+}
+
+export interface ResultsLocationInterface {
+    id: number;
+    name: string;
+    type: string;
+    dimension: string;
+    residents: string[];
+    url: string;
+    created: string;
+}

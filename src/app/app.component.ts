@@ -3,8 +3,6 @@ import { RouterOutlet, RouterModule } from '@angular/router';
 
 
 import { CharactersPageComponent } from './characters-page/characters-page.component';
-import { EpisodesPageComponent } from './episodes-page/episodes-page.component';
-import { LocationsPageComponent } from './locations-page/locations-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 @Component({
