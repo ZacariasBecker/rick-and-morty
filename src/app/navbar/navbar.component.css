@@ -1,30 +1,36 @@
 nav {
+    display: flex;
+    justify-content: space-between;
     font-family: "Poppins", sans-serif;
     background-color: var(--primary-color);
 }
 
+img {
+    max-width: 7rem;
+}
+
 ul {
+    display: flex;
     list-style-type: none;
     overflow: hidden;
 }
 
 li {
-    float: right;
+    display: flex;
 }
 
-li:first-child {
-    float: left;
-    font-weight: bold;
-}
-
-li a {
-    display: block;
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.7rem;
     color: black;
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
 }
 
-li:nth-child(n+2):hover {
+li a:nth-child(n+1) {}
+
+li a:hover:nth-child(n+1) {
     background-color: #78bee4;
 }
