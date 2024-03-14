@@ -6,7 +6,7 @@
     </form>
 </section>
 <app-paginator (newItemEvent)="navigateToPage($event)" [paginatorInfo]="characterInfo"></app-paginator>
-<section class="page-characters-wrapper ">
+<section class="page-wrapper ">
     <app-character-card *ngFor="let character of dataCharacterPage?.results"
         [character]="character"></app-character-card>
 </section>

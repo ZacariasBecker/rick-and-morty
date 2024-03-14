@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { ResultsCharacterInterface } from '../results-interface';
-
 import { CommonModule } from '@angular/common';
 
 @Component({

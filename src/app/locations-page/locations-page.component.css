@@ -1,0 +1,46 @@
+.face-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
+    color: var(--primary-color);
+    height: 10vh;
+    font-family: "Poppins", sans-serif;
+    padding: 0 22px 0 22px;
+}
+
+form {
+    float: right;
+}
+
+input[type="text"] {
+    border: solid 1px var(--primary-color);
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 4px;
+    display: inline-block;
+}
+
+button {
+    padding: 10px;
+    border: solid 3px var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    border-radius: 8px;
+    transition: 90ms ease-in-out;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: black;
+    transition: 90ms ease-in-out;
+}
+
+.page-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 1em;
+    margin: 10px;
+}

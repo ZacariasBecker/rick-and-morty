@@ -62,7 +62,9 @@ export class PaginatorComponent {
         if (i < this.paginatorInfo.pages) {
           this.pageValues.push(i + 1);
         } else {
-          this.pageValues.unshift(this.pageValues[0] - 1);
+          if (this.pageValues[0] - 1 > 0) {
+            this.pageValues.unshift(this.pageValues[0] - 1);
+          }
         }
       }
     }

@@ -1,1 +1,11 @@
-<p>locations-page works!</p>
+<section class="face-page">
+    <h1>Locations</h1>
+    <form>
+        <input type="text" placeholder="filter location" #filter>
+        <button class="primary" type="button">Search</button>
+    </form>
+</section>
+<app-paginator (newItemEvent)="navigateToPage($event)" [paginatorInfo]="locationInfo"></app-paginator>
+<section class="page-wrapper ">
+    <app-location-card *ngFor="let location of dataLocationPage?.results" [location]="location"></app-location-card>
+</section>

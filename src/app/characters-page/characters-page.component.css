@@ -37,7 +37,7 @@ button:hover {
     transition: 90ms ease-in-out;
 }
 
-.page-characters-wrapper {
+.page-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-column-gap: 20px;

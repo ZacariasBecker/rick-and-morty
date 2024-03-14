@@ -26,7 +26,17 @@ const routeConfig: Routes = [
         title: 'Episodes page'
     },
     {
+        path: 'episodes/:page',
+        component: EpisodesPageComponent,
+        title: 'Episodes page'
+    },
+    {
         path: 'locations',
+        component: LocationsPageComponent,
+        title: 'Location page'
+    },
+    {
+        path: 'locations/:page',
         component: LocationsPageComponent,
         title: 'Location page'
     },

@@ -1,11 +1,11 @@
 <section class="face-page">
     <h1>Episodes</h1>
     <form>
-        <input type="text" placeholder="filter character" #filter>
+        <input type="text" placeholder="filter episode" #filter>
         <button class="primary" type="button">Search</button>
     </form>
 </section>
-<app-paginator (newItemEvent)="navigateToPage($event)"></app-paginator>
-<section class="page-characters-wrapper ">
-    <h1>episodes page</h1>
+<app-paginator (newItemEvent)="navigateToPage($event)" [paginatorInfo]="episodeInfo"></app-paginator>
+<section class="page-wrapper ">
+    <app-episode-card *ngFor="let episode of dataEpisodePage?.results" [episode]="episode"></app-episode-card>
 </section>
