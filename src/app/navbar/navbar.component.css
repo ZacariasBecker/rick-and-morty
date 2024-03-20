@@ -2,7 +2,7 @@ nav {
     display: flex;
     justify-content: space-between;
     font-family: "Poppins", sans-serif;
-    background-color: var(--primary-color);
+    background: linear-gradient(90deg, rgba(169, 211, 233, 1) 0%, rgba(109, 197, 244, 1) 100%);
 }
 
 img {
@@ -29,8 +29,6 @@ a {
     text-decoration: none;
 }
 
-li a:nth-child(n+1) {}
-
 li a:hover:nth-child(n+1) {
-    background-color: #78bee4;
+    background-color: rgb(93, 187, 238);
 }
