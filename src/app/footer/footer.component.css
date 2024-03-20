@@ -24,7 +24,7 @@ a {
 }
 
 a:visited {
-    color: var(--aqua-color);
+    color: rgb(196, 255, 33);
 }
 
 img {

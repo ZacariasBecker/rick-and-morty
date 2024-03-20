@@ -1,4 +1,5 @@
-<div class="notification" (click)="navigateToEpisode()">
+<div class="notification gradient" [ngClass]="episode.episode[2]==='1'?'s01':episode.episode[2]==='2'?'s02':'s03'"
+    (click)="navigateToEpisode()">
     <div class="notiglow"></div>
     <div class="notiborderglow"></div>
     <div class="notititle">{{episode.episode}}</div>

@@ -1,3 +1,15 @@
+.s01 {
+    --gradient: linear-gradient(to bottom, #4bb6fd, #7e61ff);
+}
+
+.s02 {
+    --gradient: linear-gradient(to bottom, #f9bc2c, #f74c06);
+}
+
+.s03 {
+    --gradient: linear-gradient(to bottom, #d8bdbe, #bd90e3);
+}
+
 .notification {
     display: flex;
     flex-direction: column;
@@ -10,7 +22,6 @@
     overflow: hidden;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 16px;
-    --gradient: linear-gradient(to bottom, #4bb6fd, #3d83ff, #7e61ff);
     --color: #32a6ff;
     cursor: pointer;
 }
