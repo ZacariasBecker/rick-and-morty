@@ -5,8 +5,8 @@
         <button class="primary" type="button">Search</button>
     </form>
 </section>
-<app-paginator (newItemEvent)="navigateToPage($event)" [paginatorInfo]="characterInfo"></app-paginator>
 <section class="page-wrapper ">
     <app-character-card *ngFor="let character of dataCharacterPage?.results"
         [character]="character"></app-character-card>
 </section>
+<app-paginator (newItemEvent)="navigateToPage($event)" [paginatorInfo]="characterInfo"></app-paginator>

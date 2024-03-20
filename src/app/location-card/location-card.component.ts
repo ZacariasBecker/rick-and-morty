@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ResultsLocationInterface } from '../results-interface';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-location-card',
@@ -11,4 +12,10 @@ import { CommonModule } from '@angular/common';
 })
 export class LocationCardComponent {
   @Input() location!: ResultsLocationInterface;
+
+  navigateToLocation = async () => {
+    await this.router.navigate(['location', this.location?.id]);
+  };
+
+  constructor(private router: Router) { }
 }

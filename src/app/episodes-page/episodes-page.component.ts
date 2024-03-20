@@ -24,14 +24,14 @@ export class EpisodesPageComponent {
   navigateToPage = async (page: number) => {
     await this.router.navigate(['episodes', page]);
     const currentEpisodesPage = parseInt(this.route.snapshot.params['page'] || 1);
-    this.rmapiService.getADataByID<DataEpisodeInterface>('episode', currentEpisodesPage).then((dataEpisodePage) => {
+    this.rmapiService.getAPageDataByID<DataEpisodeInterface>('episode', currentEpisodesPage).then((dataEpisodePage) => {
       this.dataEpisodePage = dataEpisodePage;
     });
   };
 
   constructor(private router: Router) {
     const currentEpisodesPage = parseInt(this.route.snapshot.params['page'] || 1);
-    this.rmapiService.getADataByID<DataEpisodeInterface>('episode', currentEpisodesPage).then((dataEpisodePage) => {
+    this.rmapiService.getAPageDataByID<DataEpisodeInterface>('episode', currentEpisodesPage).then((dataEpisodePage) => {
       this.dataEpisodePage = dataEpisodePage;
       this.episodeInfo = dataEpisodePage.info;
     });

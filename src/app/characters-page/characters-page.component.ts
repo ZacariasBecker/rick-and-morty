@@ -26,14 +26,14 @@ export class CharactersPageComponent {
   navigateToPage = async (page: number) => {
     await this.router.navigate(['characters', page]);
     const currentCharactersPage = parseInt(this.route.snapshot.params['page'] || 1);
-    this.rmapiService.getADataByID<DataCharacterInterface>('character', currentCharactersPage).then((dataCharacterPage: DataCharacterInterface) => {
+    this.rmapiService.getAPageDataByID<DataCharacterInterface>('character', currentCharactersPage).then((dataCharacterPage: DataCharacterInterface) => {
       this.dataCharacterPage = dataCharacterPage;
     });
   };
 
   constructor(private router: Router) {
     const currentCharactersPage = parseInt(this.route.snapshot.params['page'] || 1);
-    this.rmapiService.getADataByID<DataCharacterInterface>('character', currentCharactersPage).then((dataCharacterPage: DataCharacterInterface) => {
+    this.rmapiService.getAPageDataByID<DataCharacterInterface>('character', currentCharactersPage).then((dataCharacterPage: DataCharacterInterface) => {
       this.dataCharacterPage = dataCharacterPage;
       this.characterInfo = dataCharacterPage.info;
     });

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ResultsEpisodeInterface } from '../results-interface';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-episode-card',
@@ -11,4 +12,10 @@ import { CommonModule } from '@angular/common';
 })
 export class EpisodeCardComponent {
   @Input() episode!: ResultsEpisodeInterface;
+
+  navigateToEpisode = async () => {
+    await this.router.navigate(['episode', this.episode?.id]);
+  };
+
+  constructor(private router: Router) { }
 }

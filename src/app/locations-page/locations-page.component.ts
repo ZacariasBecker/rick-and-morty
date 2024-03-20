@@ -24,14 +24,14 @@ export class LocationsPageComponent {
   navigateToPage = async (page: number) => {
     await this.router.navigate(['locations', page]);
     const currentLocationsPage = parseInt(this.route.snapshot.params['page'] || 1);
-    this.rmapiService.getADataByID<DataLocationInterface>('location', currentLocationsPage).then((dataLocationPage: DataLocationInterface) => {
+    this.rmapiService.getAPageDataByID<DataLocationInterface>('location', currentLocationsPage).then((dataLocationPage: DataLocationInterface) => {
       this.dataLocationPage = dataLocationPage;
     });
   };
 
   constructor(private router: Router) {
     const currentLocationsPage = parseInt(this.route.snapshot.params['page'] || 1);
-    this.rmapiService.getADataByID<DataLocationInterface>('location', currentLocationsPage).then((dataLocationPage: DataLocationInterface) => {
+    this.rmapiService.getAPageDataByID<DataLocationInterface>('location', currentLocationsPage).then((dataLocationPage: DataLocationInterface) => {
       this.dataLocationPage = dataLocationPage;
       this.locationInfo = dataLocationPage.info;
     });

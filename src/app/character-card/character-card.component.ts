@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { ResultsCharacterInterface } from '../results-interface';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-character-card',
@@ -11,4 +12,10 @@ import { CommonModule } from '@angular/common';
 })
 export class CharacterCardComponent {
   @Input() character!: ResultsCharacterInterface;
+
+  navigateToCharacter = async () => {
+    await this.router.navigate(['character', this.character?.id]);
+  };
+
+  constructor(private router: Router) { }
 }
