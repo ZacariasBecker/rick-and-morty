@@ -1,16 +1,69 @@
-<p>created: {{dataCharacter?.created}}</p>
-<p>episode: {{dataCharacter?.episode}}</p>
-<p>gender: {{dataCharacter?.gender}}</p>
-<p>id: {{dataCharacter?.id}}</p>
-<p>image: {{dataCharacter?.image}}</p>
-<p>name: {{dataCharacter?.name}}</p>
-<p>species: {{dataCharacter?.species}}</p>
-<p>status: {{dataCharacter?.status}}</p>
-<p>type: {{dataCharacter?.type}}</p>
-<p>url: {{dataCharacter?.url}}</p>
+<div class="container">
 
-<p>location: {{dataCharacter?.location?.name}}</p>
-<p>location: {{dataCharacter?.location?.url}}</p>
+    <h3>{{dataCharacter?.name}}</h3>
+    <div class="card">
+        <img [src]="dataCharacter?.image">
 
-<p>origin: {{dataCharacter?.origin?.name}}</p>
-<p>origin: {{dataCharacter?.origin?.url}}</p>
+        <div class="info">
+            <div class="info-text">
+                <span *ngIf="dataCharacter?.gender==='Male'" class="material-symbols-outlined blue-span">male</span>
+                <span *ngIf="dataCharacter?.gender==='Female'" class="material-symbols-outlined blue-span">female</span>
+                <span *ngIf="dataCharacter?.gender!=='Male' && dataCharacter?.gender!=='Female'"
+                    class="material-symbols-outlined gray-span">cancel</span>
+                <h4><span [ngClass]="dataCharacter?.gender==='unknown'?'gray-span':'blue-span'">Gender:</span>
+                    {{dataCharacter?.gender}} </h4>
+            </div>
+            <div class="info-text">
+                <span *ngIf="dataCharacter?.location?.name!=='unknown'"
+                    class="material-symbols-outlined blue-span">location_on</span>
+                <span *ngIf="dataCharacter?.location?.name==='unknown'"
+                    class="material-symbols-outlined gray-span">location_on</span>
+                <h4>
+                    <span [ngClass]="dataCharacter?.location?.name==='unknown'?'gray-span':'blue-span'">Location:</span>
+                    <span (click)="navigateToLocation(dataCharacter?.location?.url)"
+                        [ngClass]="dataCharacter?.location?.name==='unknown'?'':'link'">{{dataCharacter?.location?.name}}</span>
+                </h4>
+            </div>
+            <div class="info-text">
+                <span *ngIf="dataCharacter?.origin?.name!=='unknown'"
+                    class="material-symbols-outlined blue-span">public</span>
+                <span *ngIf="dataCharacter?.origin?.name==='unknown'"
+                    class="material-symbols-outlined gray-span">public</span>
+                <h4>
+                    <span [ngClass]="dataCharacter?.origin?.name==='unknown'?'gray-span':'blue-span'">Origin:</span>
+                    <span (click)="navigateToLocation(dataCharacter?.origin?.url)"
+                        [ngClass]="dataCharacter?.origin?.name==='unknown'?'':'link'">{{dataCharacter?.origin?.name}}</span>
+                </h4>
+            </div>
+            <div class="info-text">
+                <span *ngIf="dataCharacter?.species!=='unknown'"
+                    class="material-symbols-outlined blue-span">family_history</span>
+                <span *ngIf="dataCharacter?.species==='unknown'"
+                    class="material-symbols-outlined gray-span">family_history</span>
+                <h4><span
+                        [ngClass]="dataCharacter?.species==='unknown'?'gray-span':'blue-span'">Species:</span>{{dataCharacter?.species}}
+                </h4>
+            </div>
+            <div class="info-text">
+                <span *ngIf="dataCharacter?.status==='Alive'"
+                    class="material-symbols-outlined green-span">heart_check</span>
+                <span *ngIf="dataCharacter?.status==='Dead'"
+                    class="material-symbols-outlined red-span">heart_minus</span>
+                <span *ngIf="dataCharacter?.status==='unknown'"
+                    class="material-symbols-outlined gray-span">cancel</span>
+                <h4><span
+                        [ngClass]="dataCharacter?.status==='Alive'?'green-span':dataCharacter?.status==='Dead'?'red-span':'gray-span'">Status:</span>
+                    {{dataCharacter?.status}}</h4>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <p class="episodes-title">Episodes with {{dataCharacter?.name}}</p>
+
+    <div class="page-wrapper">
+        <app-episode-card *ngFor="let episode of this.episodes" [episode]="episode"></app-episode-card>
+    </div>
+
+</div>
