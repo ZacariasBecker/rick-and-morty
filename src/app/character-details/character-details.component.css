@@ -40,6 +40,7 @@
 h3 {
     font-size: 40px;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .blue-span {
@@ -69,6 +70,7 @@ hr {
     justify-self: start;
     align-self: self-start;
     margin-left: 3rem;
+    margin-bottom: 10px;
     font-size: 30px;
 }
 

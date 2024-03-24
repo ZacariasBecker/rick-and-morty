@@ -10,7 +10,7 @@
                 <span *ngIf="dataCharacter?.gender==='Female'" class="material-symbols-outlined blue-span">female</span>
                 <span *ngIf="dataCharacter?.gender!=='Male' && dataCharacter?.gender!=='Female'"
                     class="material-symbols-outlined gray-span">cancel</span>
-                <h4><span [ngClass]="dataCharacter?.gender==='unknown'?'gray-span':'blue-span'">Gender:</span>
+                <h4><span [ngClass]="dataCharacter?.gender==='unknown'?'gray-span':'blue-span'">Gender: </span>
                     {{dataCharacter?.gender}} </h4>
             </div>
             <div class="info-text">
@@ -19,7 +19,8 @@
                 <span *ngIf="dataCharacter?.location?.name==='unknown'"
                     class="material-symbols-outlined gray-span">location_on</span>
                 <h4>
-                    <span [ngClass]="dataCharacter?.location?.name==='unknown'?'gray-span':'blue-span'">Location:</span>
+                    <span [ngClass]="dataCharacter?.location?.name==='unknown'?'gray-span':'blue-span'">Location:
+                    </span>
                     <span (click)="navigateToLocation(dataCharacter?.location?.url)"
                         [ngClass]="dataCharacter?.location?.name==='unknown'?'':'link'">{{dataCharacter?.location?.name}}</span>
                 </h4>
@@ -30,7 +31,7 @@
                 <span *ngIf="dataCharacter?.origin?.name==='unknown'"
                     class="material-symbols-outlined gray-span">public</span>
                 <h4>
-                    <span [ngClass]="dataCharacter?.origin?.name==='unknown'?'gray-span':'blue-span'">Origin:</span>
+                    <span [ngClass]="dataCharacter?.origin?.name==='unknown'?'gray-span':'blue-span'">Origin: </span>
                     <span (click)="navigateToLocation(dataCharacter?.origin?.url)"
                         [ngClass]="dataCharacter?.origin?.name==='unknown'?'':'link'">{{dataCharacter?.origin?.name}}</span>
                 </h4>
@@ -40,8 +41,8 @@
                     class="material-symbols-outlined blue-span">family_history</span>
                 <span *ngIf="dataCharacter?.species==='unknown'"
                     class="material-symbols-outlined gray-span">family_history</span>
-                <h4><span
-                        [ngClass]="dataCharacter?.species==='unknown'?'gray-span':'blue-span'">Species:</span>{{dataCharacter?.species}}
+                <h4><span [ngClass]="dataCharacter?.species==='unknown'?'gray-span':'blue-span'">Species:
+                    </span>{{dataCharacter?.species}}
                 </h4>
             </div>
             <div class="info-text">
@@ -52,7 +53,8 @@
                 <span *ngIf="dataCharacter?.status==='unknown'"
                     class="material-symbols-outlined gray-span">cancel</span>
                 <h4><span
-                        [ngClass]="dataCharacter?.status==='Alive'?'green-span':dataCharacter?.status==='Dead'?'red-span':'gray-span'">Status:</span>
+                        [ngClass]="dataCharacter?.status==='Alive'?'green-span':dataCharacter?.status==='Dead'?'red-span':'gray-span'">Status:
+                    </span>
                     {{dataCharacter?.status}}</h4>
             </div>
         </div>

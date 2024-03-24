@@ -5,7 +5,7 @@
         <button class="primary" type="button">Search</button>
     </form>
 </section>
-<section class="page-wrapper ">
+<section class="page-wrapper">
     <app-location-card *ngFor="let location of dataLocationPage?.results" [location]="location"></app-location-card>
 </section>
 <app-paginator (newItemEvent)="navigateToPage($event)" [paginatorInfo]="locationInfo"></app-paginator>

@@ -1,7 +1,41 @@
-<p>air_date: {{dataEpisode?.air_date}}</p>
-<p>characters: {{dataEpisode?.characters}}</p>
-<p>created: {{dataEpisode?.created}}</p>
-<p>episode: {{dataEpisode?.episode}}</p>
-<p>id: {{dataEpisode?.id}}</p>
-<p>name: {{dataEpisode?.name}}</p>
-<p>url: {{dataEpisode?.url}}</p>
+<div class="container">
+
+    <h3><span class="blue-span">Episode:</span> {{dataEpisode?.episode}}</h3>
+    <div class="card">
+        <div class="info">
+
+            <div class="info-text">
+                <span class="material-symbols-outlined blue-span">movie</span>
+                <h4><span class="blue-span">Name: </span>{{dataEpisode?.name}}
+                </h4>
+            </div>
+
+            <div class="info-text">
+                <span class="material-symbols-outlined blue-span">tv</span>
+                <h4><span class="blue-span">Season: </span>{{dataEpisode!.episode.split("E")[0].replace('S','')}}
+                </h4>
+            </div>
+
+            <div class="info-text">
+                <span class="material-symbols-outlined blue-span">play_circle</span>
+                <h4><span class="blue-span">Episode: </span>{{dataEpisode!.episode.split("E")[1]}}
+                </h4>
+            </div>
+
+            <div class="info-text">
+                <span class="material-symbols-outlined blue-span">calendar_month</span>
+                <h4><span class="blue-span">Air date: </span>{{dataEpisode?.air_date}}
+                </h4>
+            </div>
+
+        </div>
+    </div>
+
+    <hr>
+
+    <p class="episodes-title">Appear in this episode</p>
+
+    <div class="page-wrapper">
+        <app-character-card *ngFor="let character of this.characters" [character]="character"></app-character-card>
+    </div>
+</div>
