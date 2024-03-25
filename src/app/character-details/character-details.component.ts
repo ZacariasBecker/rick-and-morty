@@ -4,11 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RMapiService } from '../rmapi.service';
 import { CommonModule } from '@angular/common';
 import { EpisodeCardComponent } from '../episode-card/episode-card.component';
+import { StarsComponent } from '../stars/stars.component';
 
 @Component({
   selector: 'app-character-details',
   standalone: true,
-  imports: [CommonModule, EpisodeCardComponent],
+  imports: [CommonModule, EpisodeCardComponent, StarsComponent],
   templateUrl: './character-details.component.html',
   styleUrl: './character-details.component.css'
 })

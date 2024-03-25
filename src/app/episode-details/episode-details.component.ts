@@ -4,11 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ResultsCharacterInterface, ResultsEpisodeInterface } from '../results-interface';
 import { CommonModule } from '@angular/common';
 import { CharacterCardComponent } from '../character-card/character-card.component';
+import { StarsComponent } from '../stars/stars.component';
 
 @Component({
   selector: 'app-episode-details',
   standalone: true,
-  imports: [CommonModule, CharacterCardComponent],
+  imports: [CommonModule, CharacterCardComponent, StarsComponent],
   templateUrl: './episode-details.component.html',
   styleUrl: './episode-details.component.css'
 })

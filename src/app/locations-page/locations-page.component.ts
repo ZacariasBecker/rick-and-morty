@@ -6,11 +6,12 @@ import { InfoInterface } from '../info-interface';
 import { PaginatorComponent } from '../paginator/paginator.component';
 import { CommonModule } from '@angular/common';
 import { LocationCardComponent } from '../location-card/location-card.component';
+import { StarsComponent } from '../stars/stars.component';
 
 @Component({
   selector: 'app-locations-page',
   standalone: true,
-  imports: [CommonModule, LocationCardComponent, PaginatorComponent],
+  imports: [CommonModule, LocationCardComponent, PaginatorComponent, StarsComponent],
   templateUrl: './locations-page.component.html',
   styleUrl: './locations-page.component.css'
 })

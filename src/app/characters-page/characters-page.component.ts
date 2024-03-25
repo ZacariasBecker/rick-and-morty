@@ -8,11 +8,12 @@ import { CharacterCardComponent } from '../character-card/character-card.compone
 import { PaginatorComponent } from '../paginator/paginator.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InfoInterface } from '../info-interface';
+import { StarsComponent } from '../stars/stars.component';
 
 @Component({
   selector: 'app-characters-page',
   standalone: true,
-  imports: [CommonModule, CharacterCardComponent, PaginatorComponent],
+  imports: [CommonModule, CharacterCardComponent, PaginatorComponent, StarsComponent],
   templateUrl: './characters-page.component.html',
   styleUrl: './characters-page.component.css'
 })

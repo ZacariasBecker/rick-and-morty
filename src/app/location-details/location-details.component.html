@@ -1,33 +1,36 @@
-<div class="container">
+<div class="stars-container">
+    <app-stars />
 
-    <h3><span class="blue-span">Location:</span> {{dataLocation?.name}}</h3>
-    <div class="card">
-        <div class="info">
+    <div class="container">
+        <h3><span class="blue-span">Location:</span> {{dataLocation?.name}}</h3>
+        <div class="card">
+            <div class="info">
 
-            <div class="info-text">
-                <span class="material-symbols-outlined"
-                    [ngClass]="dataLocation?.dimension==='unknown'?'gray-span':'blue-span'">globe</span>
-                <h4><span [ngClass]="dataLocation?.dimension==='unknown'?'gray-span':'blue-span'">Dimension:
-                    </span>{{dataLocation?.dimension}}
-                </h4>
+                <div class="info-text">
+                    <span class="material-symbols-outlined"
+                        [ngClass]="dataLocation?.dimension==='unknown'?'gray-span':'blue-span'">globe</span>
+                    <h4><span [ngClass]="dataLocation?.dimension==='unknown'?'gray-span':'blue-span'">Dimension:
+                        </span>{{dataLocation?.dimension}}
+                    </h4>
+                </div>
+
+                <div class="info-text">
+                    <span class="material-symbols-outlined"
+                        [ngClass]="dataLocation?.type==='unknown'?'gray-span':'blue-span'">token</span>
+                    <h4><span [ngClass]="dataLocation?.type==='unknown'?'gray-span':'blue-span'">Type:
+                        </span>{{dataLocation?.type}}
+                    </h4>
+                </div>
+
             </div>
-
-            <div class="info-text">
-                <span class="material-symbols-outlined"
-                    [ngClass]="dataLocation?.type==='unknown'?'gray-span':'blue-span'">token</span>
-                <h4><span [ngClass]="dataLocation?.type==='unknown'?'gray-span':'blue-span'">Type:
-                    </span>{{dataLocation?.type}}
-                </h4>
-            </div>
-
         </div>
-    </div>
 
-    <hr>
+        <hr>
 
-    <p class="episodes-title">Residents</p>
+        <p class="episodes-title">Residents</p>
 
-    <div class="page-wrapper">
-        <app-character-card *ngFor="let character of this.residents" [character]="character"></app-character-card>
+        <div class="page-wrapper">
+            <app-character-card *ngFor="let character of this.residents" [character]="character"></app-character-card>
+        </div>
     </div>
 </div>

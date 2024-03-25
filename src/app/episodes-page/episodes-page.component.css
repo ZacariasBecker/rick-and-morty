@@ -45,3 +45,7 @@ button:hover {
     margin: 10px;
     margin-bottom: 70px;
 }
+
+.stars-container {
+    overflow: hidden;
+}

@@ -5,8 +5,11 @@
         <button class="primary" type="button">Search</button>
     </form>
 </section>
-<section class="page-wrapper ">
-    <app-character-card *ngFor="let character of dataCharacterPage?.results"
-        [character]="character"></app-character-card>
-</section>
-<app-paginator (newItemEvent)="navigateToPage($event)" [paginatorInfo]="characterInfo"></app-paginator>
+<div class="stars-container">
+    <app-stars />
+    <section class="page-wrapper ">
+        <app-character-card *ngFor="let character of dataCharacterPage?.results"
+            [character]="character"></app-character-card>
+    </section>
+    <app-paginator (newItemEvent)="navigateToPage($event)" [paginatorInfo]="characterInfo"></app-paginator>
+</div>

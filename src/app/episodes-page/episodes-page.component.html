@@ -5,7 +5,10 @@
         <button class="primary" type="button">Search</button>
     </form>
 </section>
-<section class="page-wrapper ">
-    <app-episode-card *ngFor="let episode of dataEpisodePage?.results" [episode]="episode"></app-episode-card>
-</section>
-<app-paginator (newItemEvent)="navigateToPage($event)" [paginatorInfo]="episodeInfo"></app-paginator>
+<div class="stars-container">
+    <app-stars />
+    <section class="page-wrapper ">
+        <app-episode-card *ngFor="let episode of dataEpisodePage?.results" [episode]="episode"></app-episode-card>
+    </section>
+    <app-paginator (newItemEvent)="navigateToPage($event)" [paginatorInfo]="episodeInfo"></app-paginator>
+</div>

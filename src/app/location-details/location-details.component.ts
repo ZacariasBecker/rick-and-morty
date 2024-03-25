@@ -4,11 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ResultsCharacterInterface, ResultsLocationInterface } from '../results-interface';
 import { CommonModule } from '@angular/common';
 import { CharacterCardComponent } from '../character-card/character-card.component';
+import { StarsComponent } from '../stars/stars.component';
 
 @Component({
   selector: 'app-location-details',
   standalone: true,
-  imports: [CommonModule, CharacterCardComponent],
+  imports: [CommonModule, CharacterCardComponent, StarsComponent],
   templateUrl: './location-details.component.html',
   styleUrl: './location-details.component.css'
 })

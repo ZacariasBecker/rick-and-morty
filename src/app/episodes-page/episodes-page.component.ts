@@ -6,11 +6,12 @@ import { InfoInterface } from '../info-interface';
 import { PaginatorComponent } from '../paginator/paginator.component';
 import { CommonModule } from '@angular/common';
 import { EpisodeCardComponent } from '../episode-card/episode-card.component';
+import { StarsComponent } from '../stars/stars.component';
 
 @Component({
   selector: 'app-episodes-page',
   standalone: true,
-  imports: [CommonModule, PaginatorComponent, EpisodeCardComponent],
+  imports: [CommonModule, PaginatorComponent, EpisodeCardComponent, StarsComponent],
   templateUrl: './episodes-page.component.html',
   styleUrl: './episodes-page.component.css'
 })
