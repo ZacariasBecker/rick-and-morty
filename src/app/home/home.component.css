@@ -1,6 +1,9 @@
 .container {
     display: flex;
     flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    min-height: 220vh;
+
 }
 
 .content {
@@ -13,6 +16,90 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.685);
-    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.699), #101B1E)
 }
+
+.info h2, .info p {
+    color: white;
+}
+
+.info p {
+    margin-top: 12px;
+    text-align: center;
+}
+
+.info-description {
+    max-width: 50vw;
+}
+
+.section-info {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+
+.secondary-blue {
+    color: red
+}
+
+.section-info h2 {
+    color: rgb(0, 115, 255);
+    font-size: 30px;
+    margin-top: 10rem;
+}
+
+#planet {
+    width: 10rem;
+    margin-top: 12rem;
+
+}
+
+.flip-card {
+    rotate: -10deg;
+    background-color: transparent;
+    width: 200px;
+    margin-top: 100px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-animation: rotate 5s linear infinite;
+    -moz-animation: rotate 5s linear infinite;
+    animation: rotate 5s linear infinite;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+
+
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotatey(360deg);
+    }
+}
+
+@-moz-keyframes rotate {
+    100% {
+        -moz-transform: rotatey(360deg);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotatey(360deg);
+    }
+}
+
+
+/* bbbbbbbbbbbbbbbbbbbb */

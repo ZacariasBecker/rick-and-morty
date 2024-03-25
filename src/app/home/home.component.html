@@ -4,7 +4,52 @@
             <source src="../../assets/home_video.mp4" type="video/mp4">
         </video>
         <div class="over-video">
+            <!-- <app-stars></app-stars> -->
 
+            <div class="section-info info">
+                <div class="info-description">
+                    <h2>Character</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore esse natus, reprehenderit
+                        expedita sed qui et possimus ullam sapiente nobis quibusdam molestiae iure excepturi iusto,
+                        eveniet ad minus voluptatum temporibus!</p>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <app-character-card *ngIf="flipCharacters"
+                                [character]="flipCharacters[0]"></app-character-card>
+                        </div>
+                        <div class="flip-card-back">
+                            <app-character-card *ngIf="flipCharacters"
+                                [character]="flipCharacters[1]"></app-character-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-info info">
+                <h2>Episode</h2>
+            </div>
+            <div class="section-info info">
+                <app-episode-card *ngIf="exampleEpisode" [episode]="exampleEpisode"></app-episode-card>
+                <div class="info-description">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id nesciunt aut ducimus. In tenetur
+                        nulla
+                        voluptates, amet, laudantium quae repellat fugit alias accusantium possimus voluptatibus
+                        perferendis
+                        aspernatur molestias repudiandae quibusdam!</p>
+                </div>
+            </div>
+
+            <div class="section-info info">
+                <div class="info-description">
+                    <h2>Location</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore suscipit quos voluptatibus
+                        cupiditate error obcaecati officia repellendus rerum. Vero dignissimos soluta tempore culpa
+                        corporis nam molestias, libero ea officia minus?</p>
+                </div>
+                <img id="planet" src="../../assets/planet-white.svg" alt="planet">
+            </div>
 
         </div>
     </div>
